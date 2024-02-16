@@ -4,7 +4,10 @@
   <div class="bg-dark h-screen">
      <div class="flex " style="height: 88vh;">
       <!--side nav bar-->
-       <div class="w-56 bg-black h-full flex-none"></div>
+       <div class="w-56 bg-black h-full flex-none">
+        <img src="green.jpg.png" style="
+        filter: brightness(0) invert(1);"/>
+       </div>
       <!--main content-->
        <div class="w-full h-full relative">
          <!-- header -->
