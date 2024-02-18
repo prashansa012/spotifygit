@@ -9,13 +9,40 @@
         <img src="green.jpg.png" class="h-10 " style="
         filter: brightness(0) invert(1);"/>
         </div>
-       <div class="mx-2">
+       <div class="mx-2 mb-5">
          <button v-for="page in pages" @click="setID = page.id" :class="`w-full h-8 text-s rounded px-3py-2 flex items-center justify-start ${setID ===page.id?'bg-light text-white': 'text-lightest'}`">
           <i class="material-icons mr-3">{{ page.icon }}</i>
           <p>{{ page.name }}</p>
          </button>
-         <!-- <button></button>
-         <button></button> -->
+        </div>
+      <div class="mx-5">
+        <h1 class="mb-3 text-xs text-lightest tracking-widest uppercase">Playlist</h1>
+        <button class="flex items-center justify-start opacity-75 hover:opacity-100 mb-2">
+          <img src="createnew.png" class="h-8 w-8 mr-3"/>
+          <p class="text-sm text-white ">create playlist</p>
+        </button>
+        <button class="flex items-center justify-start opacity-75 hover:opacity-100">
+          <img src="likes.jpg" class="h-8 w-8 mr-3"/>
+          <p class="text-sm text-white ">Like songs</p>
+        </button>
+        <div class="h-px w-full bg-light my-3"></div>
+      </div>
+      <div class="mx-5">
+        <div class="w-full h-10 overflow-y-scroll">
+          <p v-for="album in albums" class="text-lightest hover:text-white text-sm py-1">{{ album.name }}</p>
+        </div>
+        <button class="flex items-center justify-start text-lightest hover:text-white py-3">
+          <i class="material-icons mr-3 rounded-full border border-lightest">arrow_downward</i>
+          <p class="text-sm ">Install App</p>
+        </button>
+      </div>
+      <div class="relative pt-3">
+        <div class="w-full h-full flex justify-end items-start opacity-0 hover:opacity-100 p-2 absolute">
+          <div class="bg-black rounded-full h-6 w-6">
+            <i class="material-icons text-white">keyboard_arrow_down</i>
+          </div>
+        </div>
+        <img src="band.jpg" class="w-full"/>
       </div>
        </div>
       <!--main content-->
@@ -44,7 +71,15 @@ export default {
       {id:'search',name:'Search',icon:'search'},   
       {id:'library',name:'Your Library',icon:'bar_chart'}   
      ],
-     setID :'home'
+     setID :'home', 
+     albums:[
+      {name:'drive'},
+      {name:'zhu'},
+      {name:'All New Indie'},
+      {name:'Mellow'},
+      {name:'Classic Road Trip Songs'},
+      {name:'Lana Del Rey Radio'}
+     ]
     }
   }
 };
