@@ -10,7 +10,7 @@
         filter: brightness(0) invert(1);"/>
         </div>
        <div class="mx-2 mb-5">
-         <button v-for="page in pages" @click="setID = page.id" :class="`w-full h-8 text-s rounded px-3py-2 flex items-center justify-start ${setID ===page.id?'bg-light text-white': 'text-lightest'}`">
+         <button v-for="page in pages" @click="setID = page.id" :class="`w-full focus:outline-none  h-8 text-s rounded px-3py-2 flex items-center justify-start ${setID ===page.id?'bg-light text-white': 'text-lightest'}`">
           <i class="material-icons mr-3">{{ page.icon }}</i>
           <p>{{ page.name }}</p>
          </button>
@@ -48,7 +48,30 @@
       <!--main content-->
        <div class="w-full h-full relative">
          <!-- header -->
-         <div class="w-full sticky top-0  p-2"></div>
+         <div class="w-full sticky top-0  py-4 px-6 flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="rounded-full bg-black w-8 h-8 text-white mr-3">
+              <i class="material-icons text-3xl">keyboard_arrow_left</i>
+            </button>
+            <button class="rounded-full bg-black w-8 h-8 text-white">
+            <i class="material-icons text-3xl">keyboard_arrow_right</i>
+          </button>
+          </div>
+          <div class="relative">
+            <button @click="showDropdown=true " class="focus:outline-none bg-light rounded-full py-1 px-2 flex items-center">
+              <img src="myface.jpeg" class="rounded-full h-6 w-6"/>
+              <p class=" text-white text-xs px-2">
+                  Prashansa Goswami
+              </p>
+              <i v-if="showDropdown=== false" class="material-icons text-white">arrow_drop_down</i>
+              <i v-if="showDropdown=== true" class="material-icons text-white">arrow_drop_up</i>
+            </button>
+            <div v-if="showDropdown=== true" class="absolute bg-light  w-full rounded mt-1">
+              <button @click="showDropdown = false" class="focus:outline-none w-full text-s py-2 text-lightest hover text-white border-b border-white opacity-75 hover:opacity-100 ">Account</button>
+              <button @click="showDropdown = false" class="focus:outline-none w-full text-s py-2 text-lightest hover text-white border-b border-light opacity-75 hover:opacity-100  ">Log Out</button>
+            </div>
+          </div>
+         </div>
         </div>
      </div>    
   </div>
@@ -79,7 +102,8 @@ export default {
       {name:'Mellow'},
       {name:'Classic Road Trip Songs'},
       {name:'Lana Del Rey Radio'}
-     ]
+     ],
+     showDropdown: false
     }
   }
 };
