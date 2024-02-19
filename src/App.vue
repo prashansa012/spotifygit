@@ -46,7 +46,7 @@
       </div>
        </div>
       <!--main content-->
-       <div class="w-full h-full relative">
+       <div class="w-full h-full relative overflow-y-scroll">
          <!-- header -->
          <div class="w-full sticky top-0  py-4 px-6 flex items-center justify-between">
           <div class="flex items-center">
@@ -72,6 +72,23 @@
             </div>
           </div>
          </div>
+         <!--cards-->
+         <div class="px-6 py-3">
+         <div class=" flex  items-center justify-between">
+          <h1 class="pl-2 text-2xl text-white tracking-wider hover:underline">Recently Played</h1>
+          <h2 class="pr-8 pt-4 text-xs text-lightest uppercase tracking-wider hover:underline mb-3">See All</h2>
+        </div>
+        <div class="w-full flex flex-wrap ">
+          <div v-for="recent in recents" class="p-2 w-48">
+          <div class="bg-light w-full h-auto p-5 rounded-lg shadow-md">
+            <img :src="`${recent.src}`" class="h-auto w-full shadow mb-2 "/>
+            <h1 class="text-sm text-white tracking-wide">{{ recent.title }}</h1>
+            <h2 class="text-xs text-lightest tracking-wide">{{ recent.artist }}</h2>
+          </div>
+        </div>
+          </div> 
+         
+        </div>
         </div>
      </div>    
   </div>
@@ -103,7 +120,15 @@ export default {
       {name:'Classic Road Trip Songs'},
       {name:'Lana Del Rey Radio'}
      ],
-     showDropdown: false
+     showDropdown: false,
+     recents:[
+      {src:'dailymix1.jpg',title:'Daily Mix 1',artist:'By Spotify'},
+      {src:'dailymix2.jpg',title:'Daily mix Pritam',artist:'By Spotify'},
+      {src:'shreya.jpg',title:'This is Shreya',artist:'Shreya Ghosal'},
+      {src:'sufi.jpg',title:'Sufi & Bollywood',artist:'By Spotify'},
+      {src:'diljit.jpg',title:'Diljit Dosanjh Radio',artist:'Diljit Dosanjh'},
+      {src:'mega.jpg',title:'Mega Hit Mix',artist:'By Spotify'}
+     ]
     }
   }
 };
