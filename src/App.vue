@@ -48,7 +48,7 @@
       <!--main content-->
        <div class="w-full h-full relative overflow-y-scroll">
          <!-- header -->
-         <div class="w-full sticky top-0  py-4 px-6 flex items-center justify-between">
+         <div class="w-full sticky top-0  py-4 px-6 flex items-center justify-between bg-dark">
           <div class="flex items-center">
             <button class="rounded-full bg-black w-8 h-8 text-white mr-3">
               <i class="material-icons text-3xl">keyboard_arrow_left</i>
@@ -73,23 +73,47 @@
           </div>
          </div>
          <!--cards-->
-         <div class="px-6 py-3">
-         <div class=" flex  items-center justify-between">
-          <h1 class="pl-2 text-2xl text-white tracking-wider hover:underline">Recently Played</h1>
+      <div class="px-6 py-3">
+        <div class=" flex  items-center justify-between">
+          <h1 class="pl-2 text-2xl text-white  tracking-wider hover:underline">Recently Played</h1>
           <h2 class="pr-8 pt-4 text-xs text-lightest uppercase tracking-wider hover:underline mb-3">See All</h2>
         </div>
         <div class="w-full flex flex-wrap ">
-          <div v-for="recent in recents" class="p-2 w-48">
-          <div class="bg-light w-full h-auto p-5 rounded-lg shadow-md">
-            <img :src="`${recent.src}`" class="h-auto w-full shadow mb-2 "/>
-            <h1 class="text-sm text-white tracking-wide">{{ recent.title }}</h1>
-            <h2 class="text-xs text-lightest tracking-wide">{{ recent.artist }}</h2>
+          <div v-for="recent in recents" class="p-2 w-48 relative">
+            <div class="absolute w-full h-full flex items-end justify-end p-8 opacity-0 hover:opacity-100">
+               <div class="bg-green rounded-full h-10 w-10 flex items-center justify-center">
+                <i class="material-icons text-white text-2xl">play_arrow</i>
+               </div>
+            </div>
+            <div class="bg-light w-full h-auto p-5 rounded-lg shadow-md">
+              <img :src="`${recent.src}`" class="h-auto w-full shadow mb-2 "/>
+              <h1 class="text-sm text-white tracking-wide">{{ recent.title }}</h1>
+              <h2 class="text-xs text-lightest tracking-wide pb-5">{{ recent.artist }}</h2>
+            </div>
           </div>
+         </div> 
         </div>
-          </div> 
-         
+      <div class="px-6 py-3">
+        <div class="pl-3">
+          <h1 class="pl-2 text-2xl text-white tracking-wider hover:underline">More of what you like</h1>
+          <h2 class=" text-xs text-lightest">Get better recommendation the more you listen</h2>
         </div>
+        <div class="w-full flex flex-wrap ">
+          <div v-for="custom in customs" class="p-2 w-48 relative">
+            <div class="absolute w-full h-full flex items-end justify-end p-8 opacity-0 hover:opacity-100">
+               <div class="bg-green rounded-full h-10 w-10 flex items-center justify-center">
+                <i class="material-icons text-white text-2xl">play_arrow</i>
+               </div>
+            </div>
+            <div class="bg-light w-full h-auto p-5 rounded-lg shadow-md">
+              <img :src="`${custom.src}`" class="h-auto w-full shadow mb-2 "/>
+              <h1 class="text-sm text-white tracking-wide">{{ custom.title }}</h1>
+              <h2 class="text-xs text-lightest tracking-wide pb-5">{{ custom.artist }}</h2>
+            </div>
+          </div>
+         </div> 
         </div>
+      </div>
      </div>    
   </div>
   <!-- play Bar -->
@@ -128,6 +152,14 @@ export default {
       {src:'sufi.jpg',title:'Sufi & Bollywood',artist:'By Spotify'},
       {src:'diljit.jpg',title:'Diljit Dosanjh Radio',artist:'Diljit Dosanjh'},
       {src:'mega.jpg',title:'Mega Hit Mix',artist:'By Spotify'}
+     ],
+     customs:[
+      {src:'ar.jpg',title:'Best of A.R. Rahman',artist:'By Spotify'},
+      {src:'badshah.jpg',title:'Daily mix Badshah',artist:'By Spotify'},
+      {src:'sufi.jpg',title:'Sufi & Bollywood',artist:'By Spotify'},
+      {src:'shreya.jpg',title:'This is Shreya',artist:'Shreya Ghosal'},
+      {src:'bollywood.jpg',title:'TOP Bollywood songs',artist:'By Spotify'},
+      {src:'diljit.jpg',title:'Diljit Dosanjh Radio',artist:'Diljit Dosanjh'},
      ]
     }
   }
