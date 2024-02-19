@@ -117,7 +117,48 @@
      </div>    
   </div>
   <!-- play Bar -->
-<div class="w-full bg-light" style="height: 12vh;"></div>
+  <div class="w-full flex items-center justify-between px-3 bg-light border-dark" style="height: 12vh;">
+     <div class="flex items-center">
+      <div> 
+        <h1 class="text-sm text-white tracking-wide">Summer in the City-Remastered</h1>
+        <h2 class="text-xs text-lightest tracking-wide">The Lovin' Spoonfull</h2>
+      </div>
+       <i class="material-icons text-xl text-green mx-4">favorite</i>
+       <i class="material-icons text-xl text-lightest">picture_in_picture_alt</i>
+      </div>
+      <div class="flex flex-col justify-center w-1/2 items-center">
+        <div class="flex items-center">
+          <button class=" mx-5 text-lightest hover:text-white ">
+            <i class="material-icons text-lg">shuffle</i>
+          </button>
+          <button class=" text-lightest hover:text-white ">
+            <i class="material-icons text-lg">skip_previous</i>
+          </button>
+          <button class="rounded-full h-8 w-8 flex items-center justify-center mx-5 border-lightest border text-lightest hover:text-white ">
+            <i class="material-icons">play_arrow</i>
+          </button>
+          <button class=" text-lightest hover:text-white ">
+            <i class="material-icons text-lg">skip_next</i>
+          </button>
+          <button class=" mx-5 text-lightest hover:text-white ">
+            <i class="material-icons text-lg">repeat</i>
+          </button>
+        </div>
+        <div class="w-full">
+          <div class="w-full h-1 bg-dark rounded-full mt-4 flex items-center">
+            <div class="h-1 rounded-full bg-green" style="width:18%;"></div>
+          </div>
+          <div class="h-3 w-3 bg-white rounded-full -ml-1 shadow"></div>
+        </div>
+      </div>
+     <div class="flex items-center">
+      <i class="material-icons text-lightest hover:text-white">playlist_play</i>
+      <i class="material-icons text-xl text-lightest mx-3 hover:text-white">important_devices</i>
+      <i class="material-icons text-xl text-lightest hover:text-white">volume_up</i>
+      <div class="w-20 ml-1 bg-lightest rounded-full h-1">
+      </div>
+     </div>
+  </div>
 </div>
 
   
